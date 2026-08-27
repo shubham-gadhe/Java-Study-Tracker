@@ -1,14 +1,54 @@
 import java.util.*;
 import java.io.*;
+import java.time.LocalDate;
+
+//////////////////////////////////////////////////////////////////
+//
+//  Class Name       : StudyTracker
+//
+//  Description      : This class is used to manage study logs.
+//                     It provides functionalities to insert,
+//                     display, export and generate summaries
+//                     of study logs.
+//
+//  Author           : Shubham Somanath Gadhe
+//  Date             : 20/08/2026
+//
+//////////////////////////////////////////////////////////////////
 
 class StudyTracker
 {
     private ArrayList<StudyLog> Database;
 
+    //////////////////////////////////////////////////////////////////
+    //
+    //  Constructor Name : StudyTracker()
+    //
+    //  Description      : It is used to initialise the database
+    //                     for storing study log objects.
+    //
+    //  Author           : Shubham Somanath Gadhe
+    //  Date             : 20/08/2026
+    //
+    //////////////////////////////////////////////////////////////////
+
     public StudyTracker()
     {
         Database = new ArrayList<StudyLog>();
     }
+
+    //////////////////////////////////////////////////////////////////
+    //
+    //  Method Name      : InsertLog()
+    //
+    //  Description      : It is used to accept study details from
+    //                     the user and insert the study log into
+    //                     the database.
+    //
+    //  Author           : Shubham Somanath Gadhe
+    //  Date             : 20/08/2026
+    //
+    //////////////////////////////////////////////////////////////////
 
     public void InsertLog(Scanner sobj)
     {
@@ -40,6 +80,18 @@ class StudyTracker
         System.out.println("-------------------------------------------------------");
     }
 
+    //////////////////////////////////////////////////////////////////
+    //
+    //  Method Name      : DisplayLog()
+    //
+    //  Description      : It is used to display all the study logs
+    //                     stored in the database.
+    //
+    //  Author           : Shubham Somanath Gadhe
+    //  Date             : 20/08/2026
+    //
+    //////////////////////////////////////////////////////////////////
+
     public void DisplayLog()
     {
         if(Database.isEmpty())
@@ -61,6 +113,18 @@ class StudyTracker
 
         System.out.println("-------------------------------------------------------");
     }
+
+    //////////////////////////////////////////////////////////////////
+    //
+    //  Method Name      : ExportToCSV()
+    //
+    //  Description      : It is used to export all the study logs
+    //                     stored in the database into a CSV file.
+    //
+    //  Author           : Shubham Somanath Gadhe
+    //  Date             : 20/08/2026
+    //
+    //////////////////////////////////////////////////////////////////
 
     public void ExportToCSV(Scanner sobj)
     {
@@ -110,13 +174,25 @@ class StudyTracker
         }
     }
 
+    //////////////////////////////////////////////////////////////////
+    //
+    //  Method Name      : SummaryByDate()
+    //
+    //  Description      : It is used to calculate and display the
+    //                     total study duration for each date.
+    //
+    //  Author           : Shubham Somanath Gadhe
+    //  Date             : 20/08/2026
+    //
+    //////////////////////////////////////////////////////////////////
+
     public void SummaryByDate()
     {
         System.out.println("-------------------------------------------------------");
         System.out.println("Summary by Date from study tracker");
         System.out.println("-------------------------------------------------------");
 
-        TreeMap <LocalDate, Double> tobj = new TreeMap<LocalDate, Double>();
+        TreeMap<LocalDate, Double> tobj = new TreeMap<LocalDate, Double>();
 
         LocalDate lobj = null;
         double d = 0.0;
@@ -130,7 +206,7 @@ class StudyTracker
             if(tobj.containsKey(lobj))
             {
                 old = tobj.get(lobj);
-                tobj.put(lobj, d+old);
+                tobj.put(lobj, d + old);
             }
             else
             {
@@ -147,13 +223,25 @@ class StudyTracker
         System.out.println("-------------------------------------------------------");
     }
 
+    //////////////////////////////////////////////////////////////////
+    //
+    //  Method Name      : SummaryBySubject()
+    //
+    //  Description      : It is used to calculate and display the
+    //                     total study duration for each subject.
+    //
+    //  Author           : Shubham Somanath Gadhe
+    //  Date             : 20/08/2026
+    //
+    //////////////////////////////////////////////////////////////////
+
     public void SummaryBySubject()
     {
         System.out.println("-------------------------------------------------------");
         System.out.println("Summary by Subject from study tracker");
         System.out.println("-------------------------------------------------------");
 
-        TreeMap <String, Double> tobj = new TreeMap<String, Double>();
+        TreeMap<String, Double> tobj = new TreeMap<String, Double>();
 
         String sobj = null;
         double d = 0.0;
@@ -182,6 +270,5 @@ class StudyTracker
         }
 
         System.out.println("-------------------------------------------------------");
-
     }
 }
