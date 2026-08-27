@@ -1,7 +1,35 @@
 import java.util.*;
 
+//////////////////////////////////////////////////////////////////
+//
+//  Class Name       : StudyTrackerApp
+//
+//  Description      : This class contains the main method of the
+//                     Study Tracker application. It provides a
+//                     menu-driven interface to perform various
+//                     study tracking operations.
+//
+//  Author           : Shubham Somanath Gadhe
+//  Date             : 18/08/2026
+//
+//////////////////////////////////////////////////////////////////
+
 public class StudyTrackerApp
 {
+    //////////////////////////////////////////////////////////////////
+    //
+    //  Method Name      : main()
+    //
+    //  Description      : It is the entry point of the Study Tracker
+    //                     application. It displays the menu and
+    //                     performs operations based on the user's
+    //                     choice.
+    //
+    //  Author           : Shubham Somanath Gadhe
+    //  Date             : 18/08/2026
+    //
+    //////////////////////////////////////////////////////////////////
+
     public static void main(String A[])
     {
         StudyTracker stobj = new StudyTracker();
